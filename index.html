@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title>My Budget App</title>
+    <html lang="en"></html>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette">
+</head>
+<body>
+    <h1>Budget Application</h1>
+    <div id="inputSections" class="inputSections">
+        <section id="incomingMoney">
+            <h3>Please Enter Your Budget</h3>
+            <input type="number" id="incomingCashInput" class="inputs" name="incoming_Cash_Input"><br>
+            <button id="incomingCalcButton">Calculate</button>
+        </section>
+
+        <section id="enterExpenses">
+            <h3>Please Enter Your Expense</h3>
+            <input type="text" id="expenseName" class="inputs" name="expense_Name">
+            <h3>Please Enter Expense Amount</h3>
+            <input type="number" id="expenseAmount" class="inputs" name="expense_Value"><br>
+            <button id="expenseButton">Add Expense</button>
+        </section>
+    </div>
+    <section id="calculations" class="calcs">
+        <div class="budget calcs">
+            <h3>Budget</h3><br>
+            <img src="money_icon.png" class="moneyIcon calcIcon"><br>
+            <section id="budgetIncoming">
+
+            </section>
+        </div>
+        <div class="expenses calcs">
+            <h3>Expenses</h3><br>
+            <img src="expense_icon.png" class="expenseIcon calcIcon"><br>
+            <section id="expenseIncoming">
+
+            </section>
+        </div>
+        <div class="balance calcs">
+            <h3>Balance</h3><br><br>
+            <img src="budget_icon.png" class="budgetIcon calcIcon"><br>
+            <section class="balanceIncoming">
+
+            </section>
+        </div>
+    </section>
+
+    <section id="expenses" class="expContainer">
+        <div class="titleExpenses expContainer">
+            <h4>Expense Title</h4>
+            <section>
+
+            </section>
+        </div>
+        <div class="valueExpenses expContainer">
+            <h4>Expense Value</h4>
+            <section>
+                
+            </section>
+        </div>
+        <div class="deleteExpensesv expContainer">
+            <section>
+
+            </section>
+        </div>
+
+    </section>
+
+
+</body>
+<script src="script.js"></script>
+</html>
