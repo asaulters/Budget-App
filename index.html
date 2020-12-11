@@ -4,23 +4,24 @@
     <html lang="en"></html>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 </head>
 <body>
     <h1>Budget Application</h1>
     <div id="inputSections" class="inputSections">
-        <section id="incomingMoney">
+        <form id="incomingMoney">
             <h3>Please Enter Your Budget</h3>
             <input type="number" id="incomingCashInput" class="inputs" name="incoming_Cash_Input"><br>
             <button id="incomingCalcButton">Calculate</button>
-        </section>
+        </form>
 
-        <section id="enterExpenses">
+        <form id="enterExpenses">
             <h3>Please Enter Your Expense</h3>
             <input type="text" id="expenseName" class="inputs" name="expense_Name">
             <h3>Please Enter Expense Amount</h3>
             <input type="number" id="expenseAmount" class="inputs" name="expense_Value"><br>
             <button id="expenseButton">Add Expense</button>
-        </section>
+        </form>
     </div>
     <section id="calculations" class="calcs">
         <div class="budget calcs">
@@ -40,27 +41,28 @@
         <div class="balance calcs">
             <h3>Balance</h3><br><br>
             <img src="budget_icon.png" class="budgetIcon calcIcon"><br>
-            <section class="balanceIncoming">
+            <section id="balanceIncoming">
 
             </section>
         </div>
     </section>
 
-    <section id="expenses" class="expContainer">
-        <div class="titleExpenses expContainer">
+    <section id="expenses expContainer" >
+        <div class="expContainer">
             <h4>Expense Title</h4>
-            <section>
+            <section class="titleExpenses expContainer" id="title_Expenses">
 
             </section>
         </div>
-        <div class="valueExpenses expContainer">
-            <h4>Expense Value</h4>
-            <section>
+        <div class="expContainer">
+            <h4>Expense Value</h4><br><br>
+            <section class="valueExpenses" id="value_Expenses">
                 
             </section>
         </div>
-        <div class="deleteExpensesv expContainer">
-            <section>
+        <div class="expContainer">
+            <h4>Edit</h4>
+            <section class="deleteExpenses" >
 
             </section>
         </div>
