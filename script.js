@@ -1,5 +1,4 @@
 //Selectors and Vars
-let totalExpense;
 let incomingCalcButton = document.getElementById('incomingCalcButton');
 let outgoingCalcButton = document.getElementById('expenseButton');
 let newExpenseName =  document.querySelector("[name=expense_Name]");
@@ -8,6 +7,7 @@ let expensesNameSection = document.querySelector('#title_Expenses');
 let expensesAmountSection = document.querySelector('#value_Expenses');
 let expenseTrashButton = document.querySelector('.deleteExpenses');
 let globalExpenseAmount =[0];
+let incomingBudget = document.querySelector("[name=incoming_Cash_Input]")
 
 //Functions 
 
@@ -19,7 +19,7 @@ function incomingCash() {
 
     document.getElementById("budgetIncoming").innerHTML = incomingInput;
     document.getElementById("balanceIncoming").innerHTML = balanceBudget;
-    incomingInput.value = "";
+    incomingBudget.value = "";
 }
 
 
