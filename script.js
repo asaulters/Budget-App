@@ -2,47 +2,68 @@
 let totalExpense;
 let incomingCalcButton = document.getElementById('incomingCalcButton');
 let outgoingCalcButton = document.getElementById('expenseButton');
-let newExpenseName =  document.querySelector("[name=expense_Name]").value;
-let newExpenseAmount =  document.querySelector("[name=expense_Value]").value;
+let newExpenseName =  document.querySelector("[name=expense_Name]");
+let newExpenseAmount =  document.querySelector("[name=expense_Value]");
 let expensesNameSection = document.querySelector('#title_Expenses');
 let expensesAmountSection = document.querySelector('#value_Expenses');
-
+let expenseTrashButton = document.querySelector('.deleteExpenses');
+let globalExpenseAmount =[0];
 
 //Functions 
 
 function incomingCash() {
+    //Prevent submission
     event.preventDefault();
-    let incomingInput = document.querySelector("[name=incoming_Cash_Input]").value;
-    let expenseInputName = document.querySelector("[name=expense_Name]").value;
-    let expenseInputAmount = document.querySelector("[name=expense_Value]").value;
-    let balanceBudget = incomingInput - expenses[1]; 
+    let incomingInput = parseInt(document.querySelector("[name=incoming_Cash_Input]").value);
+    let balanceBudget = incomingInput - globalExpenseAmount[0]; 
+
     document.getElementById("budgetIncoming").innerHTML = incomingInput;
     document.getElementById("balanceIncoming").innerHTML = balanceBudget;
+    incomingInput.value = "";
 }
 
 
 function addExpense(event) {
     //Prevent submission
     event.preventDefault();
+
     //Expense Name Div
     const expenseNameDiv = document.createElement('div');
     expenseNameDiv.classList.add('expName');
+
     //Expense amonut div
     const expenseAmountDiv = document.createElement('div');
     expenseAmountDiv.classList.add('expAmount');
+
     //Create LI Expense Names
     const newExpName = document.createElement('li');
     newExpName.innerText = newExpenseName.value;
     newExpName.classList.add('expense-name');
     expenseNameDiv.appendChild(newExpName);
+
     //Create LI Expense Amounts
     const newExpAmt = document.createElement('li');
     newExpAmt.innerText = newExpenseAmount.value;
     newExpAmt.classList.add('expense-amount');
-    expenseNameDiv.appendChild(newExpAmt);
-    //append to LI
+    expenseAmountDiv.appendChild(newExpAmt);
+
+    //Add to globalExpenseAmount
+    globalExpenseAmount[0] += parseInt(document.querySelector("[name=expense_Value]").value);
+    document.querySelector('#expenseIncoming').innerHTML = globalExpenseAmount[0];
+    
+    //Add to local storage
+    
+    //Check trash button
+    const trashButton = document.createElement("button")
+    trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+    trashButton.classList.add("trash-btn");
+
+    //append to LIs
     expensesNameSection.appendChild(expenseNameDiv);
     expensesAmountSection.appendChild(expenseAmountDiv);
+    // expensesAmountSection.appendChild(trashButton);
+
+
     //Clear input
     newExpenseName.value = "";
     newExpenseAmount.value = "";

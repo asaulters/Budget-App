@@ -32,8 +32,16 @@ html{
     width: 90%;
 }
 
-/* When the browser is at least 600px and above */
-@media screen and (min-width: 700px) {
+.expense-name{
+    display: list-item;
+    flex: 1;
+    flex-wrap: wrap;
+    
+    
+}
+
+/* When the browser is at least 800px and above */
+@media screen and (min-width: 800px) {
     html{
         margin: 1%;
        text-align: center;
@@ -68,9 +76,13 @@ html{
 
     .expContainer {
         border: blue 1px solid;
-        display: flex;
+        display: inline-flex;
         margin: auto;
-        padding-top: 20px;
+        padding-top: 10px;
+        flex-wrap: nowrap;
+        width: 32%;
         justify-content: space-around;
+        flex-flow: row;
+        
     }
   }
